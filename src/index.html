@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+     <link href="main.css" rel="stylesheet">
+  </head>
+  <body class="bg-[#F9F6F3]">
+    <div
+      class="max-w-lg md:max-w-2xl w-full mx-auto flex flex-col gap-2.5 mt-4 px-4 md:px-0"
+    >
+      <header class="bg-[#1C352D] rounded-lg p-2 text-white font-bold w-fit">
+        <h1>My Notes :</h1>
+      </header>
+      <main>
+        <!-- Form Tambah Catatan -->
+        <form-component></form-component>
+        <!-- /Form Tambah Catatan -->
+
+        <notes-list
+          class="grid md:grid-cols-2 grid-cols-1 gap-2.5"
+        ></notes-list>
+      </main>
+      <footer></footer>
+    </div>
+    <script type="module" src="./components/index.js"></script>
+  </body>
+</html>
