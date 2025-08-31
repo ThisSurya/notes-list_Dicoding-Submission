@@ -34,13 +34,3 @@ jobs:
           source: "dist/*"
           target: ${{ secrets.VPS_PATH_DIR }}
           rm: true
-
-      - name: Restart services on VPS
-        uses: appleboy/ssh-action@v0.1.7
-        with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_SSH_KEY }}
-          port: ${{ secrets.VPS_PORT }}
-          script: |
-            sudo systemctl restart nginx
