@@ -24,6 +24,16 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Inspect build (debug)
+        run: |
+          echo "=== dist list ==="
+          ls -la dist || true
+          echo "=== Search for fetch in build ==="
+          grep -R "fetch(" dist || true
+          echo "GITHUB_SHA=${GITHUB_SHA}" > dist/version.txt
+          echo "BUILT_AT=$(date -u +"%Y-%m-%dT%H:%M:%SZ")" >> dist/version.txt
+          head -n 40 dist/index.html || true  
+
       - name: Deploy build files to VPS
         uses: appleboy/scp-action@v0.1.7
         with:
