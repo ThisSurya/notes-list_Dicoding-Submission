@@ -1,10 +1,10 @@
-  import "./ButtonComponents.js";
-
-  class FormComponent extends HTMLElement {
-    constructor() {
-      super();
-      // this.attachShadow({ mode: "open" });
-      this.innerHTML = `
+import "./ButtonComponents.js";
+import { NoteService } from "../../services/NoteService.js";
+class FormComponent extends HTMLElement {
+  constructor() {
+    super();
+    // this.attachShadow({ mode: "open" });
+    this.innerHTML = `
         <style>
           /* Add your styles here */
         </style>
@@ -46,6 +46,6 @@
             </div>
           </form>
       `;
-    }
   }
-  customElements.define("form-component", FormComponent);
+}
+customElements.define("form-component", FormComponent);

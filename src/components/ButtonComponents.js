@@ -1,10 +1,11 @@
-const baseBtnClasses = "px-4 py-2 text-sm rounded-md transition focus:outline-none focus:ring-2 focus:ring-[#1C352D]/40";
+const baseBtnClasses =
+  "px-4 py-2 text-sm rounded-md transition focus:outline-none focus:ring-2 focus:ring-[#1C352D]/40 cursor-pointer";
 
 class BtnReset extends HTMLElement {
   constructor() {
     super();
-    
-    this.content = this.getAttribute('content') || 'Simpan';
+
+    this.content = this.getAttribute("content") || "Simpan";
   }
   connectedCallback() {
     this.render();
@@ -23,14 +24,13 @@ class BtnReset extends HTMLElement {
 class BtnSubmit extends HTMLElement {
   constructor() {
     super();
-    
-    this.content = this.getAttribute('content') || 'Simpan';
+
+    this.content = this.getAttribute("content") || "Simpan";
   }
   connectedCallback() {
     this.render();
   }
   render() {
-    
     this.innerHTML = `
       <button
         type="submit"
@@ -41,5 +41,5 @@ class BtnSubmit extends HTMLElement {
   }
 }
 
-customElements.define('btn-reset', BtnReset);
-customElements.define('btn-submit', BtnSubmit);
+customElements.define("btn-reset", BtnReset);
+customElements.define("btn-submit", BtnSubmit);

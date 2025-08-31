@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
-     <link href="main.css" rel="stylesheet">
+    <link href="main.css" rel="stylesheet" />
   </head>
   <body class="bg-[#F9F6F3]">
     <div
@@ -14,11 +14,24 @@
       <header class="bg-[#1C352D] rounded-lg p-2 text-white font-bold w-fit">
         <h1>My Notes :</h1>
       </header>
-      <main>
+      <main class="space-y-2.5">
         <!-- Form Tambah Catatan -->
         <form-component></form-component>
         <!-- /Form Tambah Catatan -->
+        <div class="flex items-center w-full">
+          <div class="text-gray-500 text-md">
+            <h2>Filter</h2>
+          </div>
 
+          <div class="flex items-center gap-2 ml-auto filter-container">
+            <filter-button action="Archived" label="Archived"></filter-button>
+            <filter-button
+              action="UnArchived"
+              label="UnArchived"
+            ></filter-button>
+          </div>
+          <!-- Circle -->
+        </div>
         <notes-list
           class="grid md:grid-cols-2 grid-cols-1 gap-2.5"
         ></notes-list>
